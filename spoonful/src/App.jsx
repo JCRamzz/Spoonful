@@ -43,7 +43,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-300">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-red-800 to-amber-700">
       <h1 className="text-6xl font-bold">Spoonful</h1>
       <input 
       type="text" 
@@ -53,12 +53,12 @@ const App = () => {
       className='mt-4 p-2 rounded border'
       />
       {/* Display the recipe results */}
-      <div className="recipe-list">
+      <div className="recipe-list grid grid-cols-3 gap-4 mt-8">
       {recipes.length > 0 ? (
           recipes.map((recipe) => (
-            <div key={recipe.uri} className="recipe-card">
-              <img src={recipe.image} alt={recipe.strMeal} />
-              <h3>{recipe.label}</h3>
+            <div key={recipe.uri} className="recipe-card text-center bg-yellow-100 rounded-lg p-4 shadow-md">
+              <img src={recipe.image} alt={recipe.strMeal} className="w-full h-auto rounded-lg mb-2"/>
+              <h3 className="text-lg font-semibold">{recipe.label}</h3>
             </div>
           ))
         ) : (
