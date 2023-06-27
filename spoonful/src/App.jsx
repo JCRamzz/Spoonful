@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import RecipeList from './components/RecipeList';
 import { API_KEY, APP_ID } from '../env';
 
 
@@ -25,7 +26,7 @@ const App = () => {
         `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${API_KEY}`
         );
         const data = await response.json();
-        console.log(response);
+        console.log('API response: ', data);
         setRecipes(data.hits.map((hit) => hit.recipe)); 
       } catch (error) {
         console.error('Error fetching recipes:', error);
@@ -48,24 +49,12 @@ const App = () => {
       <input 
       type="text" 
       value={searchQuery} 
-      onChange={handleSearch} 
+      onChange={handleSearch}
       placeholder="Search for recipes"
       className='mt-4 p-2 rounded border'
       />
-      {/* Display the recipe results */}
-      <div className="recipe-list grid grid-cols-3 gap-4 mt-8">
-      {recipes.length > 0 ? (
-          recipes.map((recipe) => (
-            <div key={recipe.uri} className="recipe-card text-center bg-yellow-100 rounded-lg p-4 shadow-md">
-              <img src={recipe.image} alt={recipe.strMeal} className="w-full h-auto rounded-lg mb-2"/>
-              <h3 className="text-lg font-semibold">{recipe.label}</h3>
-            </div>
-          ))
-        ) : (
-          <p>No recipes found.</p>
-        )}
+      <RecipeList recipes={recipes} />
       </div>
-    </div>
   );
 };
 
