@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import RecipeDetails from "./RecipeDetails";
 
-function RecipeList({ recipes }) {
+function RecipeList({ recipes, onRecipeClick }) {
     const [selectedRecipe, setSelectedRecipe] = useState(null);
   
     const handleRecipeClick = (recipe) => {
       setSelectedRecipe(recipe);
+      onRecipeClick(recipe);
     };
   
     return (
@@ -30,7 +31,7 @@ function RecipeList({ recipes }) {
             <p>No recipes found.</p>
           )}
         </div>
-        {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />}
+        {/* {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />} */}
       </div>
     );
   }
