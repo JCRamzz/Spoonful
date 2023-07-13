@@ -54,12 +54,13 @@ const App = () => {
   }, [searchQuery]);
 
   const handleSearch = (e) => {
+    //e.preventDefault(); // possible solution to the search-by-key-press
     setSearchQuery(e.target.value);
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-red-800 to-amber-700">
-      <h1 className="text-6xl font-bold">Spoonful</h1>
+      <h1 className="font-burtons text-6xl mt-4">Spoonful</h1>
       <input 
       type="text" 
       value={searchQuery} 

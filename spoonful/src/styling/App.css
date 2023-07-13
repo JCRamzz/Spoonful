@@ -1,3 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: "burtons";
+    src: url("./Burtons.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "burtons-script";
+    src: url("./Burtons Script.otf") format("opentype");
+  }
