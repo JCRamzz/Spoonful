@@ -28,7 +28,7 @@ function RecipeList({ recipes, onRecipeClick }) {
               </div>
             ))
           ) : (
-            <p>No recipes found.</p>
+            <p></p>
           )}
         </div>
         {/* {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />} */}

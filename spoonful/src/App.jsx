@@ -60,8 +60,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-red-800 to-amber-700">
-      <h1 className="font-burtons text-6xl mt-4">Spoonful</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-[url(./src/styling/background.jpg)]">
+      <h1 className="font-burtons text-6xl mt-4 ">Spoonful</h1>
       <input 
       type="text" 
       value={searchQuery} 
