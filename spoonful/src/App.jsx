@@ -3,6 +3,7 @@ import './styling/App.css'
 import RecipeList from './components/RecipeList';
 import RecipeModal from './components/RecipeModal';
 import { API_KEY, APP_ID } from '../env';
+import NavBar from './components/NavBar';
 
 
 //const API_KEY = import.meta.env.VITE_API_KEY;
@@ -68,6 +69,7 @@ const App = () => {
       placeholder="Search for recipes"
       className='mt-4 p-2 rounded border'
       />
+      <NavBar />
       <RecipeList recipes={recipes} onRecipeClick={openModal} />
       <RecipeModal isOpen={modalIsOpen} onRequestClose={closeModal} recipe={selectedRecipe}/>
       </div>
