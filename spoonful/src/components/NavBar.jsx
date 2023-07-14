@@ -13,7 +13,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function MavBar() {
+export default function NavBar() {
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed top-0 w-screen">
       {({ open }) => (

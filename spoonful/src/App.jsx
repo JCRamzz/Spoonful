@@ -11,6 +11,7 @@ import NavBar from './components/NavBar';
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -54,9 +55,15 @@ const App = () => {
     fetchRecipes();
   }, [searchQuery]);
 
+  const handleSearchInput  = (e) => {
+    setSearchInput(e.target.value);
+  }
+
   const handleSearch = (e) => {
-    //e.preventDefault(); // possible solution to the search-by-key-press
-    setSearchQuery(e.target.value);
+    if (e.key === 'Enter') {
+    e.preventDefault();
+    setSearchQuery(searchInput);
+    }
   };
 
   return (
@@ -64,8 +71,9 @@ const App = () => {
       <h1 className="font-burtons text-6xl mt-4 ">Spoonful</h1>
       <input 
       type="text" 
-      value={searchQuery} 
-      onChange={handleSearch}
+      value={searchInput} 
+      onChange={handleSearchInput}
+      onKeyDown={handleSearch}
       placeholder="Search for recipes"
       className='mt-4 p-2 rounded border'
       />

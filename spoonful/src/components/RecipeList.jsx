@@ -16,7 +16,7 @@ function RecipeList({ recipes, onRecipeClick }) {
             recipes.map((recipe) => (
               <div
                 key={recipe.uri}
-                className="recipe-card text-center bg-yellow-100 rounded-lg p-4 shadow-md"
+                className="recipe-card text-center bg-white rounded-lg p-4 shadow-md bg-opacity-70"
                 onClick={() => handleRecipeClick(recipe)}
               >
                 <img
